@@ -50,26 +50,26 @@ export default function Header() {
             aria-label="M MANI & CO Home"
           >
             {/* Firm Name with Integrated CA Logo */}
-            <div className="flex items-center">
-              {/* CA Emblem - Integrated as a prefix */}
-              <div className={`relative flex-shrink-0 transition-all duration-200 overflow-visible ${isScrolled
-                ? 'h-10 w-10 md:h-12 md:w-12 -mr-3 md:-mr-4'
-                : 'h-12 w-12 md:h-16 md:w-16 -mr-4 md:-mr-6'
+            <div className="flex items-center gap-3 md:gap-4">
+              {/* Logo Icon - Properly sized and transparent */}
+              <div className={`relative flex-shrink-0 transition-all duration-200 ${isScrolled
+                ? 'h-10 w-10 md:h-12 md:w-12'
+                : 'h-12 w-12 md:h-16 md:w-16'
                 }`}>
                 <Image
                   src="/ca-logo-final.png"
                   alt="CA Logo"
                   fill
-                  className={`object-contain transition-all duration-200 scale-[2.5] ${isScrolled ? 'brightness-0 opacity-100' : 'brightness-0 invert'
+                  className={`object-contain transition-all duration-200 ${isScrolled ? 'brightness-0' : 'brightness-0 invert'
                     }`}
                   priority
                 />
               </div>
 
-              {/* Firm Name & Profession */}
-              <div className="flex flex-col -space-y-1">
+              {/* Text Branding - Professional Serif Typography */}
+              <div className="flex flex-col">
                 <span
-                  className={`text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tighter transition-all duration-200`}
+                  className={`text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight transition-all duration-200`}
                   style={{
                     fontFamily: 'var(--font-serif-pro), serif',
                     color: isScrolled ? '#145886' : '#FFFFFF'
@@ -78,7 +78,7 @@ export default function Header() {
                   M MANI & CO
                 </span>
                 <span
-                  className={`font-sans font-medium uppercase tracking-[0.3em] transition-all duration-200 ${isScrolled
+                  className={`font-sans font-medium uppercase tracking-[0.15em] mt-1 transition-all duration-200 ${isScrolled
                     ? 'text-[0.6rem] md:text-[0.65rem] text-primary-600'
                     : 'text-[0.65rem] md:text-xs text-white/90'
                     }`}
