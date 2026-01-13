@@ -44,15 +44,18 @@ const Hero = () => {
             {/* Content */}
             <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">
-                        Chartered Accountants
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight mb-6">
+                        M MANI & CO
                     </h1>
-                    <p className="text-2xl md:text-3xl text-white/90 font-medium">
-                        Bengaluru, Karnataka, India
+                    <p className="text-2xl md:text-3xl lg:text-4xl text-white font-medium mb-3">
+                        Chartered Accountants
                     </p>
-
+                    <p className="text-xl md:text-2xl text-white/90 font-light mb-6">
+                        Bengaluru, Karnataka
+                    </p>
+                    <div className="h-px w-24 bg-white/30 mx-auto my-6"></div>
                     <p className="text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto font-light leading-relaxed">
-                        Professional services for income tax, GST, audit, accounting, and corporate compliance requirements.
+                        Professional services for income tax, GST, statutory audit, accounting, and corporate compliance.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
