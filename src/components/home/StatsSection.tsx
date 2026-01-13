@@ -7,30 +7,38 @@ const stats = [
   {
     icon: CheckCircle2,
     value: '100+',
-    label: 'Successful Engagements',
-    color: 'from-blue-500 to-blue-600',
-    bgColor: 'bg-blue-50',
+    label: 'Engagements Completed',
+    sublabel: 'as per internal records',
+    color: 'text-primary-700',
+    bgColor: 'bg-primary-50',
+    borderColor: 'border-primary-100',
   },
   {
     icon: Award,
     value: '15+',
-    label: 'Years of Service',
-    color: 'from-purple-500 to-purple-600',
-    bgColor: 'bg-purple-50',
+    label: 'Years in Practice',
+    sublabel: 'since establishment',
+    color: 'text-primary-700',
+    bgColor: 'bg-primary-50',
+    borderColor: 'border-primary-100',
   },
   {
     icon: Users,
     value: '50+',
-    label: 'Satisfied Clients',
-    color: 'from-green-500 to-green-600',
-    bgColor: 'bg-green-50',
+    label: 'Active Client Base',
+    sublabel: 'currently engaged',
+    color: 'text-primary-700',
+    bgColor: 'bg-primary-50',
+    borderColor: 'border-primary-100',
   },
   {
     icon: Shield,
-    value: '100%',
-    label: 'Compliance Focus',
-    color: 'from-orange-500 to-orange-600',
-    bgColor: 'bg-orange-50',
+    value: 'Focus',
+    label: 'Regulatory Compliance',
+    sublabel: 'adherence to standards',
+    color: 'text-primary-700',
+    bgColor: 'bg-primary-50',
+    borderColor: 'border-primary-100',
   },
 ];
 
@@ -42,23 +50,17 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-3xl"></div>
-      </div>
-
+    <section className="py-20 md:py-28 bg-neutral-50 relative">
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-primary-100 rounded-full mb-4">
-            <span className="text-sm font-semibold text-primary-700">Our Commitment</span>
+          <div className="inline-block px-4 py-2 bg-primary-100 border border-primary-200 rounded-full mb-4">
+            <span className="text-sm font-semibold text-primary-800">Our Practice</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
-            Professional Excellence
+            Professional Standards
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Delivering quality service with integrity and professional competence
+            Service delivery aligned with professional ethics and regulatory requirements
           </p>
         </div>
 
@@ -68,28 +70,29 @@ export default function StatsSection() {
             return (
               <div
                 key={index}
-                className={`group relative ${stat.bgColor} rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-500 ${
-                  isVisible ? 'animate-fade-in' : 'opacity-0'
-                } border-2 border-transparent hover:border-white`}
+                className={`group relative ${stat.bgColor} rounded-xl p-8 text-center border ${stat.borderColor} hover:shadow-md transition-all duration-300 ${isVisible ? 'animate-fade-in' : 'opacity-0'
+                  }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
-
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className={`w-8 h-8 bg-gradient-to-br ${stat.color} bg-clip-text text-transparent`} />
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white border border-primary-200 shadow-sm mb-6">
+                    <Icon className={`w-7 h-7 ${stat.color}`} />
                   </div>
 
                   {/* Value */}
-                  <div className={`text-5xl font-bold bg-gradient-to-br ${stat.color} bg-clip-text text-transparent mb-3`}>
+                  <div className={`text-4xl font-bold ${stat.color} mb-2`}>
                     {stat.value}
                   </div>
 
                   {/* Label */}
-                  <p className="text-neutral-700 font-semibold">
+                  <p className="text-neutral-900 font-semibold mb-1">
                     {stat.label}
+                  </p>
+
+                  {/* Sublabel */}
+                  <p className="text-xs text-neutral-500 italic">
+                    {stat.sublabel}
                   </p>
                 </div>
               </div>
@@ -99,17 +102,17 @@ export default function StatsSection() {
 
         {/* Professional Values */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+          <div className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm">
             <h3 className="text-lg font-bold text-neutral-900 mb-2">Integrity</h3>
-            <p className="text-sm text-neutral-600">Adherence to professional ethics and transparent conduct</p>
+            <p className="text-sm text-neutral-600">Adherence to professional ethics and transparent conduct in all engagements</p>
           </div>
-          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
+          <div className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm">
             <h3 className="text-lg font-bold text-neutral-900 mb-2">Confidentiality</h3>
-            <p className="text-sm text-neutral-600">Strict protection of client information and data security</p>
+            <p className="text-sm text-neutral-600">Strict protection of client information in accordance with professional standards</p>
           </div>
-          <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 border border-green-100">
+          <div className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm">
             <h3 className="text-lg font-bold text-neutral-900 mb-2">Due Care</h3>
-            <p className="text-sm text-neutral-600">Diligent application of professional knowledge and standards</p>
+            <p className="text-sm text-neutral-600">Diligent application of professional knowledge and compliance with applicable standards</p>
           </div>
         </div>
       </div>
