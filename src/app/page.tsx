@@ -16,6 +16,7 @@ import ServiceCard from '@/components/ServiceCard';
 import UpdatesPreview from '@/components/home/UpdatesPreview';
 import InsightsPreview from '@/components/home/InsightsPreview';
 import StatsSection from '@/components/home/StatsSection';
+import Script from 'next/script';
 
 const practiceAreas = [
   {
@@ -282,6 +283,39 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* JSON-LD Schema */}
+      <Script
+        id="schema-local-business"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "M MANI & CO",
+            "description": "Chartered Accountancy firm providing tax, audit, accounting, and compliance services",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Bengaluru",
+              "addressRegion": "Karnataka",
+              "addressCountry": "IN"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Bengaluru"
+            },
+            "url": "https://mmanico-website.vercel.app",
+            "priceRange": "$$",
+            "serviceType": [
+              "Tax Compliance",
+              "Audit Services",
+              "Accounting Services",
+              "GST Compliance",
+              "Corporate Compliance"
+            ]
+          })
+        }}
+      />
     </div>
   );
 }
