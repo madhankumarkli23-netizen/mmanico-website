@@ -48,10 +48,10 @@ export default function Header() {
           >
             {/* Firm Name with Integrated CA Logo */}
             <div className="flex items-center">
-              {/* Logo Icon - Pulled closer with negative margin to fix visual gap */}
-              <div className={`relative flex-shrink-0 transition-all duration-200 -mr-2 md:-mr-3 ${isScrolled
-                ? 'h-12 w-12 md:h-14 md:w-14'
-                : 'h-16 w-16 md:h-20 md:w-20'
+              {/* Logo Icon - Height strictly matched to text line-height (text-2xl/3xl) */}
+              <div className={`relative flex-shrink-0 transition-all duration-200 -mr-2 ${isScrolled
+                ? 'h-9 w-9 md:h-10 md:w-10' // ~36px-40px matches text-2xl
+                : 'h-10 w-10 md:h-12 md:w-12' // ~40px-48px matches text-3xl
                 }`}>
                 <Image
                   src="/ca-logo-final.png"
@@ -62,12 +62,13 @@ export default function Header() {
                 />
               </div>
 
-              {/* Text Branding - Professional Serif Typography */}
-              <div className="flex flex-col -space-y-0.5 md:-space-y-1">
+              {/* Text Branding - Typography sized to match logo height */}
+              <div className="flex flex-col -space-y-0.5 md:-space-y-1 justify-center h-full">
                 <span
-                  className={`text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight transition-all duration-200 text-[#145886]`}
+                  className={`text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight transition-all duration-200 text-[#145886] flex items-center`}
                   style={{
                     fontFamily: 'var(--font-serif-pro), serif',
+                    height: '100%' // Ensure text container fills height related to logo
                   }}
                 >
                   M MANI & CO
