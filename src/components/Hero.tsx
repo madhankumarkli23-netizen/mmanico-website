@@ -57,9 +57,25 @@ const Hero = () => {
                         Bengaluru, Karnataka
                     </p>
                     <div className="h-px w-24 bg-white/30 mx-auto my-6"></div>
-                    <p className="text-base md:text-lg text-neutral-200 max-w-2xl mx-auto font-light leading-relaxed">
-                        Professional CA firm providing income tax, GST, statutory audit, accounting, and corporate compliance services.
+                    <p className="text-base md:text-lg text-neutral-200 max-w-3xl mx-auto font-light leading-relaxed mb-8">
+                        Professional CA firm in Bengaluru providing comprehensive services including income tax compliance and planning, GST advisory and returns, statutory audits, accounting and bookkeeping, company law compliance, and regulatory filings for businesses and individuals.
                     </p>
+
+                    {/* Service Highlights */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-10">
+                        <div className="text-center">
+                            <p className="text-white font-medium mb-1">Tax Advisory</p>
+                            <p className="text-sm text-white/70">Income Tax, GST & TDS</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-white font-medium mb-1">Audit Services</p>
+                            <p className="text-sm text-white/70">Statutory & Internal Audit</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-white font-medium mb-1">Compliance</p>
+                            <p className="text-sm text-white/70">ROC & Regulatory Filings</p>
+                        </div>
+                    </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
                         <Link
