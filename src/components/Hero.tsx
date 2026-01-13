@@ -44,47 +44,47 @@ const Hero = () => {
             {/* Content */}
             <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto space-y-3 animate-fade-in-up">
-                    {/* Firm Name */}
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
+                    {/* Firm Name - Premium serif font */}
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-tight">
                         M MANI & CO
                     </h1>
 
-                    {/* Tagline */}
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-accent font-normal italic tracking-wider mt-2">
+                    {/* Tagline - Elegant small-caps */}
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-accent font-light tracking-[0.15em] uppercase mt-3" style={{ fontVariant: 'small-caps' }}>
                         Financial & Legal
                     </p>
 
-                    {/* Profession */}
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-wide mt-3">
+                    {/* Profession - Clear */}
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-medium tracking-wide mt-4">
                         Chartered Accountants
                     </p>
 
-                    {/* Location */}
-                    <p className="text-sm sm:text-base md:text-lg text-white/90 font-normal tracking-wide mt-2">
-                        Bengaluru, Karnataka
+                    {/* Location - Refined uppercase */}
+                    <p className="text-sm sm:text-base md:text-lg text-white/95 font-normal tracking-wider mt-2">
+                        BENGALURU, KARNATAKA
                     </p>
 
                     {/* Divider */}
-                    <div className="h-px w-20 bg-white/40 mx-auto my-5"></div>
+                    <div className="h-px w-20 bg-accent/50 mx-auto my-5"></div>
 
                     {/* Description */}
-                    <p className="text-sm sm:text-base md:text-base lg:text-lg text-neutral-100 max-w-3xl mx-auto font-light leading-relaxed px-4 mt-4">
+                    <p className="text-sm sm:text-base md:text-base lg:text-lg text-white/90 max-w-3xl mx-auto font-normal leading-relaxed px-4 mt-4">
                         Professional CA firm in Bengaluru providing comprehensive services including income tax compliance and planning, GST advisory and returns, statutory audits, accounting and bookkeeping, company law compliance, and regulatory filings for businesses and individuals.
                     </p>
 
                     {/* Service Highlights */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto pt-6 pb-3 px-4">
                         <div className="text-center py-2">
-                            <p className="text-white font-semibold mb-1 text-sm md:text-base tracking-wide">Tax Advisory</p>
-                            <p className="text-xs md:text-sm text-white/70 font-light">Income Tax, GST & TDS</p>
+                            <p className="text-white font-semibold mb-1 text-sm md:text-base tracking-wide uppercase" style={{ letterSpacing: '0.05em' }}>Tax Advisory</p>
+                            <p className="text-xs md:text-sm text-white/75 font-normal">Income Tax, GST & TDS</p>
                         </div>
                         <div className="text-center py-2">
-                            <p className="text-white font-semibold mb-1 text-sm md:text-base tracking-wide">Audit Services</p>
-                            <p className="text-xs md:text-sm text-white/70 font-light">Statutory & Internal Audit</p>
+                            <p className="text-white font-semibold mb-1 text-sm md:text-base tracking-wide uppercase" style={{ letterSpacing: '0.05em' }}>Audit Services</p>
+                            <p className="text-xs md:text-sm text-white/75 font-normal">Statutory & Internal Audit</p>
                         </div>
                         <div className="text-center py-2">
-                            <p className="text-white font-semibold mb-1 text-sm md:text-base tracking-wide">Compliance</p>
-                            <p className="text-xs md:text-sm text-white/70 font-light">ROC & Regulatory Filings</p>
+                            <p className="text-white font-semibold mb-1 text-sm md:text-base tracking-wide uppercase" style={{ letterSpacing: '0.05em' }}>Compliance</p>
+                            <p className="text-xs md:text-sm text-white/75 font-normal">ROC & Regulatory Filings</p>
                         </div>
                     </div>
 
