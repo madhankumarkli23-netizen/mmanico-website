@@ -13,9 +13,26 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#004992] via-[#004992] to-accent/5 opacity-50" />
                 <div className="w-full h-full bg-[length:200%_200%] bg-gradient-to-br from-[#004992] via-[#004992] to-[#004992] animate-gradient-slow opacity-90" />
 
-                {/* Abstract animated shapes */}
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl animate-pulse gpu-accelerated" />
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-3xl animate-pulse delay-1000 gpu-accelerated" />
+                {/* Abstract animated shapes - iOS compatible */}
+                <div
+                    className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full animate-pulse"
+                    style={{
+                        filter: 'blur(80px)',
+                        transform: 'translate3d(0, 0, 0)',
+                        willChange: 'transform, opacity',
+                        WebkitTransform: 'translate3d(0, 0, 0)'
+                    }}
+                />
+                <div
+                    className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary-500/10 rounded-full animate-pulse"
+                    style={{
+                        filter: 'blur(80px)',
+                        transform: 'translate3d(0, 0, 0)',
+                        willChange: 'transform, opacity',
+                        WebkitTransform: 'translate3d(0, 0, 0)',
+                        animationDelay: '1s'
+                    }}
+                />
             </div>
 
             {/* Content */}
