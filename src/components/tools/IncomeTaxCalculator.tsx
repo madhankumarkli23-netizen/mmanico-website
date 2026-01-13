@@ -17,28 +17,41 @@ export default function IncomeTaxCalculator({ onClose }: Props) {
   const calculateTax = () => {
     const totalIncome = parseFloat(income) || 0;
     const totalDeductions = regime === 'old' ? (parseFloat(deductions) || 0) : 0;
-    const taxableIncome = Math.max(0, totalIncome - totalDeductions);
+
+    // Standard deduction: ₹75k for new regime, ₹50k for old regime
+    const standardDeduction = regime === 'new' ? 75000 : 50000;
+    const taxableIncome = Math.max(0, totalIncome - standardDeduction - totalDeductions);
 
     let tax = 0;
+    let rebate = 0;
 
     if (regime === 'new') {
-      // New tax regime FY 2025-26 (simplified example)
-      if (taxableIncome <= 300000) tax = 0;
-      else if (taxableIncome <= 700000) tax = (taxableIncome - 300000) * 0.05;
-      else if (taxableIncome <= 1000000) tax = 20000 + (taxableIncome - 700000) * 0.10;
-      else if (taxableIncome <= 1200000) tax = 50000 + (taxableIncome - 1000000) * 0.15;
-      else if (taxableIncome <= 1500000) tax = 80000 + (taxableIncome - 1200000) * 0.20;
-      else tax = 140000 + (taxableIncome - 1500000) * 0.30;
+      // New tax regime FY 2025-26 (Budget 2025)
+      if (taxableIncome <= 400000) tax = 0;
+      else if (taxableIncome <= 800000) tax = (taxableIncome - 400000) * 0.05;
+      else if (taxableIncome <= 1200000) tax = 20000 + (taxableIncome - 800000) * 0.10;
+      else if (taxableIncome <= 1600000) tax = 60000 + (taxableIncome - 1200000) * 0.15;
+      else if (taxableIncome <= 2000000) tax = 120000 + (taxableIncome - 1600000) * 0.20;
+      else if (taxableIncome <= 2400000) tax = 200000 + (taxableIncome - 2000000) * 0.25;
+      else tax = 300000 + (taxableIncome - 2400000) * 0.30;
+
+      // Section 87A rebate: ₹60,000 for taxable income up to ₹12 lakh
+      if (taxableIncome <= 1200000) {
+        rebate = Math.min(tax, 60000);
+      }
     } else {
-      // Old tax regime (simplified)
+      // Old tax regime (unchanged)
       if (taxableIncome <= 250000) tax = 0;
       else if (taxableIncome <= 500000) tax = (taxableIncome - 250000) * 0.05;
       else if (taxableIncome <= 1000000) tax = 12500 + (taxableIncome - 500000) * 0.20;
       else tax = 112500 + (taxableIncome - 1000000) * 0.30;
     }
 
+    // Apply rebate
+    const taxAfterRebate = Math.max(0, tax - rebate);
+
     // Add 4% cess
-    tax = tax * 1.04;
+    tax = taxAfterRebate * 1.04;
 
     setResult(Math.round(tax));
   };
@@ -132,7 +145,7 @@ export default function IncomeTaxCalculator({ onClose }: Props) {
 
         <div className="bg-neutral-50 rounded-lg p-4">
           <p className="text-xs text-neutral-600 leading-relaxed mb-3">
-            This is an indicative calculation based on standard tax slabs. It does not account for rebates, surcharge, specific exemptions, or individual circumstances. For accurate tax planning and filing, professional consultation is recommended.
+            This calculator uses FY 2025-26 tax rules with ₹75,000 standard deduction for new regime and ₹50,000 for old regime. Section 87A rebate of ₹60,000 is applied for taxable income up to ₹12 lakh in new regime. Results are indicative. For accurate tax planning and filing, professional consultation is recommended.
           </p>
           <Link
             href="/contact?service=Direct%20Tax"

@@ -8,7 +8,7 @@ import PageHero from '@/components/PageHero';
 export default function IncomeTaxCalculatorPage() {
     const [regime, setRegime] = useState<'old' | 'new'>('new');
     const [income, setIncome] = useState('');
-    const [standardDeduction, setStandardDeduction] = useState('50000');
+    const [standardDeduction, setStandardDeduction] = useState('75000');
     const [section80C, setSection80C] = useState('');
     const [section80D, setSection80D] = useState('');
     const [homeLoanInterest, setHomeLoanInterest] = useState('');
@@ -25,32 +25,44 @@ export default function IncomeTaxCalculatorPage() {
         taxableIncome = Math.max(0, taxableIncome);
 
         let tax = 0;
+        let rebate = 0;
 
         if (regime === 'new') {
-            // New Regime FY 2025-26 (simplified example)
-            if (taxableIncome <= 300000) tax = 0;
-            else if (taxableIncome <= 700000) tax = (taxableIncome - 300000) * 0.05;
-            else if (taxableIncome <= 1000000) tax = 20000 + (taxableIncome - 700000) * 0.10;
-            else if (taxableIncome <= 1200000) tax = 50000 + (taxableIncome - 1000000) * 0.15;
-            else if (taxableIncome <= 1500000) tax = 80000 + (taxableIncome - 1200000) * 0.20;
-            else tax = 140000 + (taxableIncome - 1500000) * 0.30;
+            // New Regime FY 2025-26 (Budget 2025)
+            if (taxableIncome <= 400000) tax = 0;
+            else if (taxableIncome <= 800000) tax = (taxableIncome - 400000) * 0.05;
+            else if (taxableIncome <= 1200000) tax = 20000 + (taxableIncome - 800000) * 0.10;
+            else if (taxableIncome <= 1600000) tax = 60000 + (taxableIncome - 1200000) * 0.15;
+            else if (taxableIncome <= 2000000) tax = 120000 + (taxableIncome - 1600000) * 0.20;
+            else if (taxableIncome <= 2400000) tax = 200000 + (taxableIncome - 2000000) * 0.25;
+            else tax = 300000 + (taxableIncome - 2400000) * 0.30;
+
+            // Section 87A rebate: ₹60,000 for taxable income up to ₹12 lakh
+            if (taxableIncome <= 1200000) {
+                rebate = Math.min(tax, 60000);
+            }
         } else {
-            // Old Regime
+            // Old Regime (unchanged)
             if (taxableIncome <= 250000) tax = 0;
             else if (taxableIncome <= 500000) tax = (taxableIncome - 250000) * 0.05;
             else if (taxableIncome <= 1000000) tax = 12500 + (taxableIncome - 500000) * 0.20;
             else tax = 112500 + (taxableIncome - 1000000) * 0.30;
         }
 
+        // Apply rebate
+        const taxAfterRebate = Math.max(0, tax - rebate);
+
         // Add 4% cess
-        const cess = tax * 0.04;
-        const totalTax = tax + cess;
+        const cess = taxAfterRebate * 0.04;
+        const totalTax = taxAfterRebate + cess;
 
         setResult({
             grossIncome,
             totalDeductions: std + deduction80C + deduction80D + homeLoan,
             taxableIncome,
             taxBeforeCess: tax,
+            rebate,
+            taxAfterRebate,
             cess,
             totalTax: Math.round(totalTax),
         });
@@ -92,8 +104,8 @@ export default function IncomeTaxCalculatorPage() {
                                     <button
                                         onClick={() => setRegime('new')}
                                         className={`flex-1 px-4 py-3 rounded-lg border-2 transition-all ${regime === 'new'
-                                                ? 'border-primary-700 bg-primary-50 text-primary-900 font-semibold'
-                                                : 'border-neutral-300 hover:border-neutral-400'
+                                            ? 'border-primary-700 bg-primary-50 text-primary-900 font-semibold'
+                                            : 'border-neutral-300 hover:border-neutral-400'
                                             }`}
                                     >
                                         New Regime
@@ -101,8 +113,8 @@ export default function IncomeTaxCalculatorPage() {
                                     <button
                                         onClick={() => setRegime('old')}
                                         className={`flex-1 px-4 py-3 rounded-lg border-2 transition-all ${regime === 'old'
-                                                ? 'border-primary-700 bg-primary-50 text-primary-900 font-semibold'
-                                                : 'border-neutral-300 hover:border-neutral-400'
+                                            ? 'border-primary-700 bg-primary-50 text-primary-900 font-semibold'
+                                            : 'border-neutral-300 hover:border-neutral-400'
                                             }`}
                                     >
                                         Old Regime
@@ -201,9 +213,15 @@ export default function IncomeTaxCalculatorPage() {
                                         <span className="font-semibold">₹{result.taxableIncome.toLocaleString('en-IN')}</span>
                                     </div>
                                     <div className="flex justify-between text-sm">
-                                        <span className="text-neutral-600">Tax (before cess):</span>
+                                        <span className="text-neutral-600">Tax (before rebate):</span>
                                         <span className="font-medium">₹{Math.round(result.taxBeforeCess).toLocaleString('en-IN')}</span>
                                     </div>
+                                    {result.rebate > 0 && (
+                                        <div className="flex justify-between text-sm">
+                                            <span className="text-neutral-600">Section 87A Rebate:</span>
+                                            <span className="font-medium text-green-600">-₹{Math.round(result.rebate).toLocaleString('en-IN')}</span>
+                                        </div>
+                                    )}
                                     <div className="flex justify-between text-sm">
                                         <span className="text-neutral-600">Health & Education Cess (4%):</span>
                                         <span className="font-medium">₹{Math.round(result.cess).toLocaleString('en-IN')}</span>
@@ -228,12 +246,13 @@ export default function IncomeTaxCalculatorPage() {
                             <div>
                                 <h4 className="font-semibold text-blue-900 mb-2">Assumptions & Limitations</h4>
                                 <ul className="text-sm text-blue-800 space-y-1">
-                                    <li>• Standard deduction of ₹50,000 is included in both regimes</li>
+                                    <li>• Standard deduction: ₹75,000 for salaried (new regime), ₹50,000 (old regime)</li>
+                                    <li>• New regime: Section 87A rebate of ₹60,000 for taxable income up to ₹12 lakh</li>
+                                    <li>• Effective tax-free income: ₹12.75 lakh for salaried in new regime</li>
                                     <li>• New regime does not allow most deductions (80C, 80D, home loan interest)</li>
+                                    <li>• Old regime: Section 80C max ₹1.5 lakh, 80D ₹25k-₹50k (age-based)</li>
                                     <li>• Surcharge not included (applicable for income above ₹50 lakhs)</li>
-                                    <li>• Rebate under Section 87A not calculated</li>
                                     <li>• This is a simplified calculator for indicative purposes only</li>
-                                    <li>• Tax rates are based on FY 2025-26 provisions (subject to change)</li>
                                 </ul>
                             </div>
                         </div>
