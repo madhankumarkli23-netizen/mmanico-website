@@ -5,34 +5,34 @@ import { CheckCircle2, Shield, Users, FileCheck, Clock, Award } from 'lucide-rea
 
 const benefits = [
     {
-        icon: Award,
-        title: 'ICAI Registered Practice',
-        description: 'Chartered accountants registered with the Institute of Chartered Accountants of India',
-    },
-    {
-        icon: Shield,
-        title: 'Professional Standards',
-        description: 'Service delivery in accordance with applicable professional and technical standards',
-    },
-    {
         icon: Users,
-        title: 'Qualified Professionals',
-        description: 'Team of chartered accountants and compliance professionals with relevant expertise',
+        title: 'Specialized Professionals',
+        description: 'Chartered accountants with domain expertise in taxation, audit, and corporate compliance',
     },
     {
         icon: FileCheck,
-        title: 'Structured Engagement',
-        description: 'Defined engagement process with clear scope, deliverables, and timelines',
-    },
-    {
-        icon: Clock,
-        title: 'Technology Enabled',
-        description: 'Use of professional software and secure platforms for efficient service delivery',
+        title: 'Dedicated Service Teams',
+        description: 'Focused teams for each service area ensuring quality and timely delivery',
     },
     {
         icon: CheckCircle2,
-        title: 'Regulatory Focus',
-        description: 'Compliance with income tax, GST, company law, and other applicable regulations',
+        title: 'Comprehensive Compliance Services',
+        description: 'Income tax, GST, company law, audit, and payroll services under one umbrella',
+    },
+    {
+        icon: Clock,
+        title: 'Technology-Enabled Delivery',
+        description: 'Professional software, secure portals, and digital workflows for efficient service',
+    },
+    {
+        icon: Shield,
+        title: 'Client Value Focus',
+        description: 'Service delivery model centered on regulatory compliance and business needs',
+    },
+    {
+        icon: Award,
+        title: 'Professional Standards',
+        description: 'Adherence to ICAI code of ethics and applicable technical standards',
     },
 ];
 
