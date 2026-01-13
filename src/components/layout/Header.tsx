@@ -50,8 +50,8 @@ export default function Header() {
             aria-label="M MANI & CO Home"
           >
             {/* Firm Name with Integrated CA Logo */}
-            <div className="flex items-center -space-x-4 md:-space-x-6">
-              {/* Logo Icon */}
+            <div className="flex items-center -space-x-5 md:-space-x-8">
+              {/* CA Emblem - Prefixed to the firm name */}
               <div className={`relative flex-shrink-0 transition-all duration-200 ${isScrolled
                 ? 'h-16 w-16 md:h-20 md:w-20'
                 : 'h-24 w-24 md:h-32 md:w-32'
@@ -60,23 +60,26 @@ export default function Header() {
                   src="/ca-logo-final.png"
                   alt="CA Logo"
                   fill
-                  className={`object-contain transition-all duration-200 scale-125 ${isScrolled ? 'brightness-0 opacity-90' : 'brightness-0 invert'
+                  className={`object-contain transition-all duration-200 scale-125 ${isScrolled ? 'brightness-0 opacity-100' : 'brightness-0 invert'
                     }`}
                   priority
                 />
               </div>
 
-              {/* Text Branding */}
-              <div className="flex flex-col -space-y-0.5">
+              {/* Firm Name & Profession */}
+              <div className="flex flex-col -space-y-1">
                 <span
-                  className={`font-serif text-2xl md:text-3xl font-bold leading-none tracking-tight transition-all duration-200 ${isScrolled ? 'text-[#145886]' : 'text-white'
-                    }`}
+                  className={`text-2xl md:text-3xl font-bold leading-tight tracking-tight transition-all duration-200`}
+                  style={{
+                    fontFamily: 'var(--font-serif-pro), serif',
+                    color: isScrolled ? '#145886' : '#FFFFFF'
+                  }}
                 >
                   M MANI & CO
                 </span>
                 <span
-                  className={`font-sans font-medium uppercase tracking-[0.2em] transition-all duration-200 ${isScrolled
-                    ? 'text-[0.6rem] md:text-[0.65rem] text-primary-600 opacity-80'
+                  className={`font-sans font-medium uppercase tracking-[0.25em] transition-all duration-200 ${isScrolled
+                    ? 'text-[0.6rem] md:text-[0.65rem] text-primary-600'
                     : 'text-[0.65rem] md:text-xs text-white/90'
                     }`}
                 >
