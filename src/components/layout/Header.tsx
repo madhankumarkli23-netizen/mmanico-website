@@ -50,26 +50,26 @@ export default function Header() {
             aria-label="M MANI & CO Home"
           >
             {/* Firm Name with Integrated CA Logo */}
-            <div className="flex items-center gap-1 md:gap-2">
-              {/* Logo Icon - Properly sized and transparent */}
+            <div className="flex items-center gap-4 md:gap-5">
+              {/* Logo Icon - Properly sized and checked for no-overlap */}
               <div className={`relative flex-shrink-0 transition-all duration-200 ${isScrolled
-                ? 'h-14 w-14 md:h-16 md:w-16'
-                : 'h-20 w-20 md:h-24 md:w-24'
+                ? 'h-12 w-12 md:h-14 md:w-14'
+                : 'h-16 w-16 md:h-20 md:w-20'
                 }`}>
                 <Image
                   src="/ca-logo-final.png"
                   alt="CA Logo"
                   fill
-                  className={`object-contain transition-all duration-200 scale-110 ${isScrolled ? 'brightness-0' : 'brightness-0 invert'
+                  className={`object-contain transition-all duration-200 ${isScrolled ? 'brightness-0' : 'brightness-0 invert'
                     }`}
                   priority
                 />
               </div>
 
               {/* Text Branding - Professional Serif Typography */}
-              <div className="flex flex-col -space-y-1 md:-space-y-1.5">
+              <div className="flex flex-col -space-y-0.5 md:-space-y-1">
                 <span
-                  className={`text-xl md:text-3xl lg:text-4xl font-bold leading-none tracking-tight transition-all duration-200`}
+                  className={`text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight transition-all duration-200`}
                   style={{
                     fontFamily: 'var(--font-serif-pro), serif',
                     color: isScrolled ? '#145886' : '#FFFFFF'
@@ -78,9 +78,9 @@ export default function Header() {
                   M MANI & CO
                 </span>
                 <span
-                  className={`font-sans font-medium uppercase tracking-[0.2em] mt-1.5 transition-all duration-200 ${isScrolled
-                    ? 'text-[0.6rem] md:text-[0.7rem] text-primary-600'
-                    : 'text-[0.7rem] md:text-sm text-white/90'
+                  className={`font-sans font-medium uppercase tracking-[0.15em] mt-1 transition-all duration-200 ${isScrolled
+                    ? 'text-[0.6rem] md:text-[0.65rem] text-primary-600'
+                    : 'text-[0.65rem] md:text-xs text-white/90'
                     }`}
                 >
                   Chartered Accountants
