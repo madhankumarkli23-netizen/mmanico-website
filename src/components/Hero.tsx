@@ -21,36 +21,18 @@ const Hero = () => {
             {/* Content */}
             <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto space-y-4 md:space-y-5 animate-fade-in-up">
-                    {/* Firm Name - Premium serif font */}
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-2">
-                        M MANI & CO
+                    {/* Main Value Statement */}
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight max-w-3xl mx-auto">
+                        Professional Chartered Accountancy Services in Bengaluru
                     </h1>
 
-                    {/* Tagline - Elegant small-caps */}
-                    <p className="text-base sm:text-lg md:text-xl text-accent font-light italic">
-                        Financial & Legal
-                    </p>
-
-                    {/* Profession - Clear */}
-                    <p className="text-lg sm:text-xl md:text-2xl text-white font-semibold mt-2">
-                        Chartered Accountants
-                    </p>
-
-                    {/* Location - Refined uppercase */}
-                    <p className="text-sm sm:text-base md:text-lg text-white/90 font-normal">
-                        Bengaluru, Karnataka
-                    </p>
-
-                    {/* Divider */}
-                    <div className="h-px w-16 bg-white/30 mx-auto my-4"></div>
-
-                    {/* Description */}
-                    <p className="text-xs sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto font-light leading-relaxed px-2">
-                        Professional CA firm providing income tax, GST, audit, accounting, and compliance services in Bengaluru.
+                    {/* Service Description */}
+                    <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
+                        Comprehensive tax, audit, accounting, and compliance services for businesses and individuals
                     </p>
 
                     {/* Service Highlights */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-5 max-w-2xl mx-auto pt-5 pb-2 px-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto pt-6">
                         <div className="text-center py-2">
                             <p className="text-white font-medium text-xs sm:text-sm md:text-base mb-1">Tax Advisory</p>
                             <p className="text-xs text-white/70">Income Tax, GST & TDS</p>
