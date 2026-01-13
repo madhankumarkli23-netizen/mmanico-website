@@ -48,8 +48,8 @@ export default function Header() {
           >
             {/* Firm Name with Integrated CA Logo */}
             <div className="flex items-center">
-              {/* Logo Icon - Exact font-size matching: text-xl=20px, text-2xl=24px, text-3xl=30px */}
-              <div className="relative flex-shrink-0 transition-all duration-200 -mr-2 h-[20px] w-[20px] md:h-[24px] md:w-[24px] lg:h-[30px] lg:w-[30px]">
+              {/* Logo Icon - Spanning full height of firm name + subtitle */}
+              <div className="relative flex-shrink-0 transition-all duration-200 -mr-2 h-[52px] w-[52px] md:h-[56px] md:w-[56px] lg:h-[60px] lg:w-[60px]">
                 <Image
                   src="/ca-logo-final.png"
                   alt="CA Logo"
