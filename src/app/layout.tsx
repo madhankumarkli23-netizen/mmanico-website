@@ -25,6 +25,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mmanico.com'), // Replace with actual production domain
   title: "Chartered Accountants in Bengaluru | Tax, Audit & Compliance - M MANI & CO",
   description: "Professional chartered accountancy services in Bengaluru, Karnataka. Income tax compliance, GST, statutory audit, accounting, and corporate regulatory services.",
   keywords: "chartered accountants Bengaluru, CA firm Bengaluru, tax compliance, GST, audit services, income tax, corporate compliance, accounting services Karnataka",
