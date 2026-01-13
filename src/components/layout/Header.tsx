@@ -35,10 +35,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${isScrolled
-        ? 'bg-white/95 backdrop-blur-md shadow-lg py-2'
-        : 'bg-transparent py-4'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-white/95 backdrop-blur-md shadow-sm ${isScrolled ? 'py-2' : 'py-4'}`}
     >
       <nav className="container-custom" aria-label="Main navigation">
         <div className={`flex items-center justify-between transition-all duration-200 ${isScrolled ? 'h-16' : 'h-20'
@@ -46,13 +43,13 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-4 group"
+            className="flex items-center group"
             aria-label="M MANI & CO Home"
           >
             {/* Firm Name with Integrated CA Logo */}
-            <div className="flex items-center gap-4 md:gap-5">
-              {/* Logo Icon - Properly sized and checked for no-overlap */}
-              <div className={`relative flex-shrink-0 transition-all duration-200 ${isScrolled
+            <div className="flex items-center">
+              {/* Logo Icon - Pulled closer with negative margin to fix visual gap */}
+              <div className={`relative flex-shrink-0 transition-all duration-200 -mr-2 md:-mr-3 ${isScrolled
                 ? 'h-12 w-12 md:h-14 md:w-14'
                 : 'h-16 w-16 md:h-20 md:w-20'
                 }`}>
@@ -60,8 +57,7 @@ export default function Header() {
                   src="/ca-logo-final.png"
                   alt="CA Logo"
                   fill
-                  className={`object-contain transition-all duration-200 ${isScrolled ? 'brightness-0' : 'brightness-0 invert'
-                    }`}
+                  className="object-contain"
                   priority
                 />
               </div>
@@ -69,18 +65,17 @@ export default function Header() {
               {/* Text Branding - Professional Serif Typography */}
               <div className="flex flex-col -space-y-0.5 md:-space-y-1">
                 <span
-                  className={`text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight transition-all duration-200`}
+                  className={`text-xl md:text-2xl lg:text-3xl font-bold leading-none tracking-tight transition-all duration-200 text-[#145886]`}
                   style={{
                     fontFamily: 'var(--font-serif-pro), serif',
-                    color: isScrolled ? '#145886' : '#FFFFFF'
                   }}
                 >
                   M MANI & CO
                 </span>
                 <span
-                  className={`font-sans font-medium uppercase tracking-[0.15em] mt-1 transition-all duration-200 ${isScrolled
-                    ? 'text-[0.6rem] md:text-[0.65rem] text-primary-600'
-                    : 'text-[0.65rem] md:text-xs text-white/90'
+                  className={`font-sans font-medium uppercase tracking-[0.15em] mt-1 transition-all duration-200 text-primary-600 ${isScrolled
+                    ? 'text-[0.6rem] md:text-[0.65rem]'
+                    : 'text-[0.65rem] md:text-xs'
                     }`}
                 >
                   Chartered Accountants
@@ -99,9 +94,7 @@ export default function Header() {
                   href={item.href}
                   className={`relative px-5 py-2.5 text-sm font-medium transition-all duration-200 border-b-2 ${isActive
                     ? 'text-accent border-accent font-semibold'
-                    : isScrolled
-                      ? 'text-primary-900 border-transparent hover:text-accent hover:border-accent'
-                      : 'text-white/90 border-transparent hover:text-white hover:border-accent'
+                    : 'text-primary-900 border-transparent hover:text-accent hover:border-accent'
                     }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -114,8 +107,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className={`md:hidden p-2 rounded-md transition-colors ${isScrolled ? 'text-primary-900 hover:bg-neutral-100' : 'text-white hover:bg-white/10'
-              }`}
+            className="md:hidden p-2 rounded-md transition-colors text-primary-900 hover:bg-neutral-100"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle navigation menu"
