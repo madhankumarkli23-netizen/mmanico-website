@@ -131,6 +131,126 @@ export default function HomePage() {
         <StatsSection />
       </section>
 
+      {/* How Engagement Works */}
+      <section className="py-16 md:py-20 bg-neutral-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-2 bg-primary-100 border border-primary-200 rounded-full mb-4">
+              <span className="text-sm font-semibold text-primary-800">Our Process</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+              How Engagement Works
+            </h2>
+            <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
+              A structured, transparent approach to professional service delivery
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div className="relative">
+              <div className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow h-full">
+                <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-xl mb-4">
+                  1
+                </div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  Initial Enquiry
+                </h3>
+                <p className="text-sm text-neutral-600 leading-relaxed">
+                  Submit your enquiry through our contact form, email, or WhatsApp. Share basic details about your requirements.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow h-full">
+                <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-xl mb-4">
+                  2
+                </div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  Preliminary Discussion
+                </h3>
+                <p className="text-sm text-neutral-600 leading-relaxed">
+                  We assess the scope, our competence, independence, and any conflict considerations before proceeding.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow h-full">
+                <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-xl mb-4">
+                  3
+                </div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  Engagement Letter
+                </h3>
+                <p className="text-sm text-neutral-600 leading-relaxed">
+                  Upon acceptance, we provide a formal engagement letter outlining scope, timeline, deliverables, and fee structure.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow h-full">
+                <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-xl mb-4">
+                  4
+                </div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  Service Delivery
+                </h3>
+                <p className="text-sm text-neutral-600 leading-relaxed">
+                  Work is performed with regular communication, quality checks, and timely delivery of agreed outputs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-neutral-600 max-w-3xl mx-auto">
+              <strong>Note:</strong> Preliminary discussions or website enquiries do not constitute engagement acceptance or create any professional relationship. Services are provided subject to formal engagement terms.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Document Security & Confidentiality */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container-custom max-w-4xl">
+          <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8 md:p-12 border border-primary-200 shadow-lg">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-12 h-12 rounded-full bg-primary-700 flex items-center justify-center flex-shrink-0">
+                <ShieldCheck className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-2">
+                  Document Security & Confidentiality
+                </h2>
+                <p className="text-neutral-700 leading-relaxed">
+                  All client information and documents are handled with strict confidentiality protocols in accordance with professional standards and ICAI guidelines.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-3 text-sm text-neutral-700">
+              <div className="flex items-start gap-2">
+                <span className="text-primary-700 font-bold">•</span>
+                <p>Access to client data is limited to engagement team members on a need-to-know basis</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary-700 font-bold">•</span>
+                <p>Physical and digital documents are stored securely with appropriate access controls</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary-700 font-bold">•</span>
+                <p>Confidentiality obligations continue beyond the term of engagement</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary-700 font-bold">•</span>
+                <p>We maintain professional standards for data security and client privacy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Regulatory Updates Preview */}
       <UpdatesPreview />
 
