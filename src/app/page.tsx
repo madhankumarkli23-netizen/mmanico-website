@@ -96,7 +96,7 @@ export default function HomePage() {
       <ValueProposition />
 
       {/* Practice Areas */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white animate-fade-in-up">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-4">
@@ -138,7 +138,7 @@ export default function HomePage() {
       <ServiceGrid />
 
       {/* How Engagement Works */}
-      <section className="py-16 md:py-20 bg-neutral-50">
+      <section className="py-16 md:py-20 bg-neutral-50 animate-fade-in-up">
         <div className="container-custom">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-primary-100 border border-primary-200 rounded-full mb-4">
