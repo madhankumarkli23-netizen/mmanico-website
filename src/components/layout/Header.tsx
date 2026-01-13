@@ -48,10 +48,10 @@ export default function Header() {
           >
             {/* Firm Name with Integrated CA Logo */}
             <div className="flex items-center">
-              {/* Logo Icon - Height strictly matched to text line-height (text-2xl/3xl) */}
+              {/* Logo Icon - Pixel-perfect height matching */}
               <div className={`relative flex-shrink-0 transition-all duration-200 -mr-2 ${isScrolled
-                ? 'h-9 w-9 md:h-10 md:w-10' // ~36px-40px matches text-2xl
-                : 'h-10 w-10 md:h-12 md:w-12' // ~40px-48px matches text-3xl
+                ? 'h-[36px] w-[36px] md:h-[40px] md:w-[40px]' // Matches text-2xl/3xl line-heights exactly
+                : 'h-[40px] w-[40px] md:h-[48px] md:w-[48px]'
                 }`}>
                 <Image
                   src="/ca-logo-final.png"
