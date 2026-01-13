@@ -18,9 +18,9 @@ const config: Config = {
           500: '#627d98',
           600: '#486581',
           700: '#334e68',
-          800: '#243b53',
-          900: '#102a43', // Deep Navy (Legacy)
-          950: '#0f172a', // Deep Royal (Modern)
+          800: '#003a75', // Slightly lighter institutional blue
+          900: '#004992', // Institutional Blue (RGB 0,73,146)
+          950: '#003366', // Deeper institutional blue
           'ca-blue': '#145886', // Official ICAI Blue (C93 M61 Y24 K9)
         },
         accent: {
