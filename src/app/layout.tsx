@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -15,6 +15,13 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   display: 'swap',
   variable: '--font-playfair',
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-serif-pro',
+  weight: ['400', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -45,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${sourceSerif.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
