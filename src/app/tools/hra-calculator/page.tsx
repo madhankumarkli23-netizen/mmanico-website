@@ -170,7 +170,7 @@ export default function HRACalculatorPage() {
                                     </div>
 
                                     <div className="mt-6 pt-6 border-t border-neutral-300">
-                                        <h4 className="text-sm font-semibold text-neutral-700 mb-3">How it's calculated:</h4>
+                                        <h4 className="text-sm font-semibold text-neutral-700 mb-3">How it&apos;s calculated:</h4>
                                         <p className="text-xs text-neutral-600 mb-2">Exempt HRA is the <strong>minimum</strong> of:</p>
                                         <div className="space-y-2 text-xs">
                                             <div className="flex justify-between">
